@@ -1,0 +1,22 @@
+<h2>Models</h2>
+<p>Select 0 for every year, select all for every make</p>
+<select [(ngModel)]="year">
+  <option>0</option>
+  <option *ngFor="let year of years"> {{ year }}</option>
+</select>
+
+<select [(ngModel)]="make">
+  <option>all</option>
+  <option *ngFor="let make of makes"> {{ make }}</option>
+</select>
+
+<button (click)=getData()>Refresh</button>
+
+<table *ngFor="let model of models">
+  <tr>
+    <td> {{ model.id }}</td>
+    <td> {{ model.year}}</td>
+    <td> {{ model.make }}</td>
+    <td> {{ model.model }}</td>
+  </tr>
+</table>
